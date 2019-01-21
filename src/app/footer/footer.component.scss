@@ -1,0 +1,23 @@
+@import "../includes/colors.scss";
+
+.footer {
+    font-size: 14px;
+    text-align: right;
+    margin-right: 0px;
+    margin-top: 0;
+}
+i {
+    font-style: normal;
+}
+.mo {
+color: $red;
+}
+
+.s,.a,.i,.c{
+color: $orage;
+}
+
+
+.lab {
+color: $blue;
+}

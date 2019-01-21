@@ -1,0 +1,57 @@
+<div class="mirai-dashboard">
+
+  <mirai-header></mirai-header>
+  <!-- <mirai-side-nav></mirai-side-nav> -->
+
+  <section class="main-content">
+    <header class="dashboard-header">
+      <ul *ngIf="env_status" class="env_status">
+        Iaas :
+        <li><i class="led-green"> </i>{{env_status.online_iaas}}/{{env_status.total_iaas}}</li>
+        Containers :<li>{{env_status.online_container}}</li>
+      </ul>
+      <ul *ngIf="iaas_selected" class="edit_menu">
+        <li (click)="add_container()">+</li>
+        <li>x</li>
+        <li>e</li>
+
+        
+      </ul>
+    </header>
+    <div class="dashboard-content">
+
+      <div class="gauges" [ngClass]="{'gauges-opened':iaas_selected,'gauges-closed':!iaas_selected}">
+        <div class="gauge-item ram">
+          <mwl-gauge *ngIf="iaas_capacity && iaas_used" class="ram" [max]="iaas_capacity.ram * 1024" [dialStartAngle]="180"
+            [dialEndAngle]="0" [value]="iaas_used.ram * 1024" [animated]="true" [animationDuration]="3">
+
+          </mwl-gauge>
+          <span>MB<br /><i class="b">RAM</i></span>
+
+        </div>
+
+        <div class="gauge-item disk">
+          <mwl-gauge *ngIf="iaas_capacity && iaas_used" class="disk" [max]="iaas_capacity.disk" [dialStartAngle]="-90"
+            [dialEndAngle]="-90.001" [value]="iaas_used.disk" [animated]="true" [animationDuration]="3">
+          </mwl-gauge>
+          <span>MB<br /><i class="b">Disk</i></span>
+
+        </div>
+
+        <div class="gauge-item cpu">
+          <mwl-gauge *ngIf="iaas_capacity && iaas_used" class="cpu" [max]="iaas_capacity.cpu" [dialStartAngle]="180"
+            [dialEndAngle]="0" [value]="iaas_used.cpu" [animated]="true" [animationDuration]="3">
+
+          </mwl-gauge>
+          <span>MB<br /><i class="b">CPU</i></span>
+        </div>
+      </div>
+
+      <div class="vis" [ngClass]="{'vis-selected':iaas_selected}" id="vis"></div>
+
+
+    </div>
+  </section>
+
+  <mirai-footer class="main-footer"></mirai-footer>
+</div>

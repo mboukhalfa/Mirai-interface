@@ -1,0 +1,52 @@
+<header class="main-header">
+  <div class="logo">
+    <h1>MIR<span class="a">A</span><span class="exclamation">!</span></h1>
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <div class="dropdownable">
+          <i class="material-icons" [ngClass]="{'i-opacity': opened===1 }" (click)="dropdownableListClick(1)">event_note</i>
+          <div class="dropdownable-list" [ngClass]="{'open-dd-list': opened===1 }">
+
+            <h3 class="dropdownable-list-title">Trigger events</h3>
+            <div class="dropdownable-list-content">
+              <a class="dropdownable-item" *ngFor="let trigger_event of trigger_events">
+
+                <h3 class="dropdownable-item-title">{{trigger_event.id}}</h3> <span class="time-ago">{{trigger_event.date
+                  | timeAgo }}</span>
+                <p>
+                  {{trigger_event.type}} - {{trigger_event.source_iaas}} - {{trigger_event.containers}}
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </li>
+      <li>
+        <div class="dropdownable">
+          <i class="material-icons" [ngClass]="{'i-opacity': opened===2 }" (click)="dropdownableListClick(2)">history</i>
+          <div class="dropdownable-list" [ngClass]="{'open-dd-list': opened===2 }">
+
+            <h3 class="dropdownable-list-title">Recent actions</h3>
+            <a class="dropdownable-item" *ngFor="let recent_action of recent_actions">
+
+              <h3 class="dropdownable-item-title">{{recent_action.name}}</h3> <span class="time-ago">{{recent_action.date
+                | timeAgo }}</span>
+              <p>
+                {{recent_action.description}}
+              </p>
+            </a>
+
+          </div>
+        </div>
+
+      </li>
+
+      <li class="user-botton">
+        <div class="user-pic"></div>
+      </li>
+    </ul>
+  </nav>
+</header>

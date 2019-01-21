@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+// @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:300,400");
+@import "app/includes/colors.scss";
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Material Icons"), local("MaterialIcons-Regular"),
+    url(./static/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif, monospace;
+  font-weight: 400;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// gauges
+mwl-gauge {
+  width: 200px;
+  height: 200px;
+  display: block;
+  padding: 10px;
+}
+
+.gauge-item.ram {
+  color: $ram-color;
+}
+mwl-gauge.ram > .gauge > .dial {
+  stroke: $gauge-back-color;
+  stroke-width: 5;
+}
+
+mwl-gauge.ram > .gauge > .value {
+  stroke: $ram-color;
+  stroke-dasharray: none;
+  stroke-width: 8;
+}
+mwl-gauge.ram > .gauge > .value-text {
+  fill: $ram-color;
+}
+
+.gauge-item.disk {
+  color: $disk-color;
+}
+mwl-gauge.disk > .gauge > .dial {
+  stroke: $gauge-back-color;
+  stroke-width: 5;
+}
+
+mwl-gauge.disk > .gauge > .value {
+  stroke: $disk-color;
+  stroke-dasharray: none;
+  stroke-width: 8;
+}
+mwl-gauge.disk > .gauge > .value-text {
+  fill: $disk-color;
+}
+
+.gauge-item.cpu {
+  color: $cpu-color;
+}
+mwl-gauge.cpu > .gauge > .dial {
+  stroke: $gauge-back-color;
+  stroke-width: 5;
+}
+
+mwl-gauge.cpu > .gauge > .value {
+  stroke: $cpu-color;
+  stroke-dasharray: none;
+  stroke-width: 8;
+}
+mwl-gauge.cpu > .gauge > .value-text {
+  fill: $cpu-color;
+}
