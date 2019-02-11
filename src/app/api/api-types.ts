@@ -6,9 +6,22 @@ export class EnvStatus {
 
 export class Iaas {
     id: number;
-    name: string;
+    iaas_name: string;
+    iaas_ip: string;
+    iaas_state: number;
+    iaas_configuration: string;
+    iaas_date_discovery: Date;
+    iaas_date_configuration: Date;
+
 }
 
+
+export class Container {
+    id: number;
+    container_name: string;
+    iaas_ip: string;
+    iaas_name: number;
+}
 
 export class TriggerEvent {
     id: number;

@@ -10,8 +10,8 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+// import { InMemoryDataService } from './in-memory-data.service';
 import { GaugeModule } from 'gauge';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import { FooterComponent } from './footer/footer.component';
@@ -31,9 +31,9 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   InMemoryDataService, { dataEncapsulation: false }
+    // ),
     GaugeModule.forRoot()
   ],
   providers: [],

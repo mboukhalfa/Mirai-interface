@@ -10,10 +10,10 @@
         <li><i class="led-green"> </i>{{env_status.online_iaas}}/{{env_status.total_iaas}}</li>
         Containers :<li>{{env_status.online_container}}</li>
       </ul>
-      <ul *ngIf="iaas_selected" class="edit_menu">
+      <ul class="edit_menu">
         <li (click)="add_container()">+</li>
-        <li>x</li>
-        <li>e</li>
+        <li [ngClass]="{'node-selected':node_selected}">x</li>
+        <li [ngClass]="{'node-selected':node_selected}">e</li>
 
         
       </ul>

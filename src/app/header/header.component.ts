@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MiraiService } from '../mirai.service';
 import { TriggerEvent, RecentAction } from '../api/api-types';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeAgoPipe } from 'time-ago-pipe';
 
 @Component({
   selector: 'mirai-header',
@@ -33,5 +33,7 @@ export class HeaderComponent implements OnInit {
     else
       this.opened = opened;
   }
+
+
 }
 
